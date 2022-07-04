@@ -5,4 +5,5 @@ split_result=($sessions_output)
 session_path=${split_result[1]}
 echo "closing session ${session_path}"
 openvpn3 session-manage --session-path $session_path --disconnect
-
+# Remove configuration list
+openvpn3 config-remove --config "client.ovpn"
